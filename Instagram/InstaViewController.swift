@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class InstaViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

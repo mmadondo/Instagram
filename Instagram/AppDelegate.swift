@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // if there is a logged in user then load the home view controller
             
             PFUser.getCurrentUserInBackground()
-            
+
         }
         
         return true

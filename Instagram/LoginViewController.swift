@@ -11,7 +11,7 @@ import Parse
 
 class LoginViewController: UIViewController {
     
-    //let loginAlertController = UIAlertController(title: "Invalid Input", message: "Please enter username AND password", preferredStyle: .alert)
+    let loginAlertController = UIAlertController(title: "Invalid Input", message: "Please enter username AND password", preferredStyle: .alert)
     
     //instantiate connections
     @IBOutlet weak var usernameField: UITextField!
@@ -44,8 +44,10 @@ class LoginViewController: UIViewController {
             
             PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
                 if let error = error {
-            //self.present(self.loginAlertController, animated: true)
+                    
+                    self.present(self.loginAlertController, animated: true)
                     print("User log in failed: \(error.localizedDescription)")
+                    
                 } else {
                     print("User logged in successfully")
                     // display view controller that needs to shown after successful login
@@ -71,7 +73,7 @@ class LoginViewController: UIViewController {
     
         
         if usernameField.text!.isEmpty || passwordField.text!.isEmpty{
-            //self.present(self.loginAlertController, animated: true)
+            self.present(self.loginAlertController, animated: true)
             
         } else{
             // call sign up function on the object to sign up the user asynchronously and avoid duplicates
@@ -94,7 +96,7 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-    /*
+    
         // create an OK action
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
             // handle response here.
@@ -104,8 +106,6 @@ class LoginViewController: UIViewController {
         // add the OK action to the alert controller
         loginAlertController.addAction(OKAction)
         
-        
-        */
     }
 
     override func didReceiveMemoryWarning() {
