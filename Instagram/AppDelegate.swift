@@ -30,12 +30,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         
         // check if user is logged in.
-        if PFUser.current() != nil {
-            // if there is a logged in user then load the home view controller
+        if let currentUser = PFUser.current() {
             
-            PFUser.getCurrentUserInBackground()
-
+            print("Welcome back \(currentUser.username!) 😀")
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+           /* let homepageController = storyboard.instantiateViewController(withIdentifier: "HomepageViewController")
+            
+            window?.rootViewController = homepageController
+ */
+            let tabController = storyboard.instantiateViewController(withIdentifier: "tabController")
+            
+            window?.rootViewController = tabController
         }
+        
+
         
         return true
     }

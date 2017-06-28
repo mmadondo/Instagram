@@ -44,9 +44,9 @@
 		<key>AllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>PhotoLibraryUsageDescription</key>
-	<string>NeedLibrary access for uploading Images</string>
-	<key>CameraUsageDescription</key>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Need Library access for uploading Images</string>
+	<key>NSCameraUsageDescription</key>
 	<string>Need camera access for uploading Images</string>
 </dict>
 </plist>
