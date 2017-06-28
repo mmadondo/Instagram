@@ -21,8 +21,8 @@ class LoginViewController: UIViewController {
     //when user signs in
     @IBAction func onLogin(_ sender: Any) {
         
-        let username = usernameField.text ?? ""
-        let password = passwordField.text ?? ""
+        let username = usernameField.text ?? ""     //the user's username
+        let password = passwordField.text ?? ""     //the user's password
         
         if username.isEmpty {
             
@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
              *Returns an instance of the successfully logged in PFUser.
              *This also caches the user locally so that calls to PFUser.currentUser() will use the latest logged in user.
              *@param:  - username: The username of the user.
-             - password: The password of the user.
+                       - password: The password of the user.
              */
             
             PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
@@ -51,6 +51,7 @@ class LoginViewController: UIViewController {
                     // display view controller that needs to shown after successful login
                     self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 }
+                
             }
             
         }
@@ -59,7 +60,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    //when user signs up or creates an account
+    //User can sign up to create a new account using Parse authentication
     @IBAction func onSignUp(_ sender: Any) {
         
         let newUser = PFUser()
