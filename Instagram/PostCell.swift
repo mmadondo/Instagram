@@ -2,18 +2,13 @@
 //  PostCell.swift
 //  Instagram
 //
-//  Created by Malvern Madondo on 6/27/17.
+//  Created by Malvern Madondo on 6/28/17.
 //  Copyright © 2017 Malvern Madondo. All rights reserved.
 //
 
 import UIKit
 
 class PostCell: UITableViewCell {
-    
-    @IBOutlet weak var imageLabel: UIImageView!
-    
-    @IBOutlet weak var captionLabel: UILabel!
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
