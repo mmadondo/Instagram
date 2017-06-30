@@ -132,20 +132,23 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
+ 
+ */
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
      let cell = sender as! UITableViewCell
+        
      if let indexPath = tableView.indexPath(for: cell){
-     let post = instaPosts[indexPath.row]
+        
+     let post = instaPosts[indexPath.row] //section]
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
-     let cameraViewCtrllr = segue.destination as! CameraViewController
-     //cameraViewCtrllr. = post
-     }
+     let detailViewCntrllr = segue.destination as! DetailsViewController
+        
+        detailViewCntrllr.myInstaPost = post
      
      }
      
-     */
-    
-    
+     }
     
 }
