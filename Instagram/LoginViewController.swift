@@ -13,12 +13,18 @@ class LoginViewController: UIViewController {
     
     let loginAlertController = UIAlertController(title: "Invalid Input", message: "Please enter username AND password", preferredStyle: .alert)
     
+    let signInErrorAlert = UIAlertController(title: "Wrong credentials", message: "Please enter correct username/password", preferredStyle: .alert)
+    
     //instantiate connections
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true) //hide keyboard
+    }
     
-    //when user signs in
+    
+    //when user signs in/ presses login button
     @IBAction func onLogin(_ sender: Any) {
         
         let username = usernameField.text ?? ""     //the user's username
@@ -26,11 +32,28 @@ class LoginViewController: UIViewController {
         
         if username.isEmpty {
             
-            //do something
+            //alert user
+            self.present(self.signInErrorAlert, animated: true)
+            
+            // create an OK action
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                // handle response here.
+                self.usernameField.text = nil
+            }
+            // add the OK action to the alert controller
+            signInErrorAlert.addAction(OKAction)
             
         } else if password.isEmpty {
             
-            //do something self.present(self.loginAlertController, animated: true)
+            self.present(self.signInErrorAlert, animated: true)
+            
+            // create an OK action
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                // handle response here.
+                self.passwordField.text = nil
+            }
+            // add the OK action to the alert controller
+            signInErrorAlert.addAction(OKAction)
             
         } else {
             

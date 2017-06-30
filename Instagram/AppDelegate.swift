@@ -31,9 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // check if user is logged in.
         if let currentUser = PFUser.current() {
-            
             print("Welcome back \(currentUser.username!) 😀")
-            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
            /* let homepageController = storyboard.instantiateViewController(withIdentifier: "HomepageViewController")
@@ -41,11 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = homepageController
  */
             let tabController = storyboard.instantiateViewController(withIdentifier: "tabController")
-            
             window?.rootViewController = tabController
         }
-        
-
         
         return true
     }
