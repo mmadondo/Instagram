@@ -26,24 +26,27 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        detailImageView.file = myInstaPost["media"] as? PFFile
-        captionLabel.text = myInstaPost["caption"] as? String
-        let name = myInstaPost["author"] as! PFUser
-        nameLabel.text = name.username!
-        
-        if let postTime = myInstaPost.createdAt{
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            dateFormatter.timeStyle = .short
+        if let myInstaPost = myInstaPost{
             
-            let timeStr = dateFormatter.string(from: postTime)
-            timeLabel.text = timeStr
+            detailImageView.file = myInstaPost["media"] as? PFFile
+            captionLabel.text = myInstaPost["caption"] as? String
+            let name = myInstaPost["author"] as! PFUser
+            nameLabel.text = name.username! + " posted a new photo"
+            
+            if let postTime = myInstaPost.createdAt{
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = .short //medium
+                dateFormatter.timeStyle = .short
+                
+                let timeStr = dateFormatter.string(from: postTime)
+                timeLabel.text = "On " + timeStr
+            }
+            
+            //self.performSegue(withIdentifier: "detailSegue", sender: self)
+            
+            detailImageView.loadInBackground()
         }
         
-        //self.performSegue(withIdentifier: "detailSegue", sender: self)
-        
-        detailImageView.loadInBackground()
     }
 
     override func didReceiveMemoryWarning() {

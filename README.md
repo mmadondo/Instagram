@@ -15,14 +15,14 @@ The following **required** functionality is completed:
 - [x] User can take a photo, add a caption, and post it to "Instagram"
 - [x] User can view the last 20 posts submitted to "Instagram"
 - [x] User can pull to refresh the last 20 posts submitted to "Instagram"
-- [ ] User can tap a post to view post details, including timestamp and creation
+- [x] User can tap a post to view post details, including timestamp and creation
 
 The following **optional** features are implemented:
 
-- [ ] Show the username and creation time for each post
+- [x] Show the username and creation time for each post
 - [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse.
 - [ ] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user.
-- [ ] User can load more posts once he or she reaches the bottom of the feed using infinite Scrolling
+- [x] User can load more posts once he or she reaches the bottom of the feed using infinite Scrolling
       User Profiles:
 - [ ] Allow the logged in user to add a profile photo
 - [ ] Display the profile photo with each post
@@ -34,18 +34,21 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] List anything else that you can get done to improve the app functionality!
+
+User can edit profile and background images and add an about section. Would like to allow user to like or comment on posts.
+Using a custom camera
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Adding comments and likes
+2. 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src= 'http://i.imgur.com/QxZIA9C.gif' 'title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

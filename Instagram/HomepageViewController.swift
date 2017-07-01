@@ -14,6 +14,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
+   
     var instaPosts: [PFObject] = []
     var refreshCtrl: UIRefreshControl!
     
@@ -52,7 +53,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
         let query = PFQuery(className: "Post")
         query.order(byDescending: "createdAt")
         query.includeKey("author")
-        query.limit = 20
+        query.limit = 20 + instaPosts.count
 
         // fetch data asynchronously
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
@@ -64,10 +65,10 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 self.instaPosts = posts
                 
-                for post in self.instaPosts {
+                /*for post in self.instaPosts {
                     let caption = post["caption"] as! String
-                    print(caption)
-                }
+                    //print(caption)
+                }*/
                 
                 self.tableView.reloadData()
             }
@@ -91,11 +92,20 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
         let post = instaPosts[indexPath.section]
         
         let caption = post["caption"] as! String
+        
+        let title = post["author"] as! PFUser
+        
         let imageToPost = post["media"] as! PFFile
         
         cell.captionLabel.text = caption
+        
+        cell.postTitleLabel.text = title.username! + " posted a new photo"
         cell.photoView.file = imageToPost
+        
+        //cell.postTitleLabel.text = title + " posted a new photo!"
+        
         //cell.userLabel.text = author.username
+        
         
         cell.photoView.loadInBackground()
         
@@ -140,7 +150,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
         
      if let indexPath = tableView.indexPath(for: cell){
         
-     let post = instaPosts[indexPath.row] //section]
+     let post = instaPosts[indexPath.section]
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
      let detailViewCntrllr = segue.destination as! DetailsViewController
