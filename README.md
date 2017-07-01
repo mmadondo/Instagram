@@ -2,8 +2,7 @@
 
 Instagram is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total.
-Started at 3:00 PM 6/27/17
+Time spent: 20 hours spent in total
 
 ## User Stories
 
@@ -15,15 +14,19 @@ The following **required** functionality is completed:
 - [x] User can take a photo, add a caption, and post it to "Instagram"
 - [x] User can view the last 20 posts submitted to "Instagram"
 - [x] User can pull to refresh the last 20 posts submitted to "Instagram"
-- [x] User can tap a post to view post details, including timestamp and creation
+- [x] User can tap a post to view post details, including timestamp and caption.
 
 The following **optional** features are implemented:
 
+- [x] Style the login page to look like the real Instagram login page.
+- [ ] Style the feed to look like the real Instagram feed.
+- [ ] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user. AKA, tabs - [ ] for Home Feed and Profile
+- [ ] Add a custom camera using the CameraManager library.
+- [x] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
 - [x] Show the username and creation time for each post
-- [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse.
-- [ ] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user.
-- [x] User can load more posts once he or she reaches the bottom of the feed using infinite Scrolling
-      User Profiles:
+Hint: If you use TableView Section Headers to display the the username and creation time, you'll get "sticky headers" - [ ] similar to the actual Instagram app.
+- [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
+- User Profiles:
 - [ ] Allow the logged in user to add a profile photo
 - [ ] Display the profile photo with each post
 - [ ] Tapping on a post's username or profile photo goes to that user's profile page
@@ -34,21 +37,20 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [x] List anything else that you can get done to improve the app functionality!
+- [ ] List anything else that you can get done to improve the app functionality!
 
-User can edit profile and background images and add an about section. Would like to allow user to like or comment on posts.
-Using a custom camera
+I would like to add a custom camera and do some of the optionals.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. Adding comments and likes
-2. 
+1. Autolayout and styling
+2.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src= 'http://i.imgur.com/QxZIA9C.gif' 'title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/ofYEPRS.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -62,6 +64,8 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+I struggled mostly with connecting the different pieces of the app such as view controllers.
 
 ## License
 
