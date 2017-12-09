@@ -43,7 +43,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        authorLabel.text = "zChat"
+        authorLabel.text = "Cool"
         collectionView.dataSource = self
         fetchImages()
     }
