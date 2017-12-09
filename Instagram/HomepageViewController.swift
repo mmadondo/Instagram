@@ -99,7 +99,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.captionLabel.text = caption
         
-        cell.postTitleLabel.text = title.username! + " uploaded a new post!!"
+        cell.postTitleLabel.text = "Check out " + title.username! + "'s new pic!"
         cell.postTitleLabel.clipsToBounds = true
         
         cell.photoView.file = imageToPost

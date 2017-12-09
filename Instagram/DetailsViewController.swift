@@ -31,7 +31,7 @@ class DetailsViewController: UIViewController {
             detailImageView.file = myInstaPost["media"] as? PFFile
             captionLabel.text = myInstaPost["caption"] as? String
             let name = myInstaPost["author"] as! PFUser
-            nameLabel.text = name.username! + " posted a new pic :)"
+            nameLabel.text = name.username! + " posted a new pic:"
             
             if let postTime = myInstaPost.createdAt{
                 let dateFormatter = DateFormatter()
